@@ -39,7 +39,7 @@ class DataParser:
                 description = row[5]
 
                 ride = Ride(name, year, manufacturer, park, location, description)
-                print(ride.name)
+                print(ride)
                 rides.append(ride)
 
             return rides
