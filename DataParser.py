@@ -33,7 +33,7 @@ class DataParser:
             for row in rows:
                 name = row[0]
                 year = row[1]
-                manufacturer = row[2]
+                movie = row[2]
                 park = row[3]
                 location = row[4]
                 description = row[5]
