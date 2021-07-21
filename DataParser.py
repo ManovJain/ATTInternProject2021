@@ -1,5 +1,6 @@
 # importing csv module
 import csv
+from Ride import Ride
 
 class DataParser:
     def __init__(self, filename):
@@ -27,16 +28,33 @@ class DataParser:
             # get total number of rows
             print("Total no. of rows: %d" % (csvreader.line_num))
 
-        # printing the field names
-        print('Field names are:' + ', '.join(field for field in fields))
+            rides = []
 
-        #  printing first 5 rows
-        print('\nFirst 20 rows are:\n')
-        for row in rows[:20]:
-            # parsing each column of a row
-            for col in row:
-                print("%10s" % col),
-            print('\n')
+            for row in rows:
+                name = row[0]
+                year = row[1]
+                manufacturer = row[2]
+                park = row[3]
+                location = row[4]
+                description = row[5]
+
+                ride = Ride(name, year, manufacturer, park, location, description)
+                print(ride.name)
+                rides.append(ride)
+
+            return rides
+
+        #     # printing the field names
+        # print('Field names are:' + ', '.join(field for field in fields))
+        #
+        # #  printing first 5 rows
+        # print('\nFirst 20 rows are:\n')
+        # for row in rows[:20]:
+        #     # parsing each column of a row
+        #     for col in row:
+        #         print("%10s" % col),
+        #     print('\n')
+
 
 
 fp = DataParser("Universal Data.csv")
