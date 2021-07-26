@@ -3,6 +3,9 @@ class User:
         self.name = name
         self.showHistory = showHistory #this is a list of shows watched by the user
 
+
+
+
 showsWatched = []
 showsWatched.append("Harry Potter")
 showsWatched.append("Shrek")

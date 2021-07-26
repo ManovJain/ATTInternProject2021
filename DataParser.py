@@ -1,10 +1,14 @@
 # importing csv module
 import csv
 from Ride import Ride
+import Show
 
 class DataParser:
     def __init__(self, filename):
         self.filename = filename
+        self.potterRides = []
+        self.rides = self.parse()
+        self.showList = []
 
     def parse(DataParser):
         # csv file name
@@ -26,7 +30,7 @@ class DataParser:
                 rows.append(row)
 
             # get total number of rows
-            print("Total no. of rows: %d" % (csvreader.line_num))
+            # print("Total no. of rows: %d" % (csvreader.line_num))
 
             rides = []
 
@@ -38,24 +42,29 @@ class DataParser:
                 location = row[4]
                 description = row[5]
 
-                ride = Ride(name, year, manufacturer, park, location, description)
-                print(ride)
+                ride = Ride(name, year, movie, park, location, description)
                 rides.append(ride)
 
             return rides
 
-        #     # printing the field names
-        # print('Field names are:' + ', '.join(field for field in fields))
-        #
-        # #  printing first 5 rows
-        # print('\nFirst 20 rows are:\n')
-        # for row in rows[:20]:
-        #     # parsing each column of a row
-        #     for col in row:
-        #         print("%10s" % col),
-        #     print('\n')
+    def findShows(self):
+        for ride in self.rides:
+            if ride.movie in self.showList:
+               # print("Already exists")
+                print()
+            else:
+                self.showList.append(ride.movie)
+
+
+    def findPotterRides(self):
+
+        for ride in self.rides:
+           if "Harry Potter" in ride.movie:
+            self.potterRides.append(ride)
+
+        for potterRide in self.potterRides:
+            print(potterRide.name)
 
 
 
-fp = DataParser("Universal Data.csv")
-fp.parse()
+
