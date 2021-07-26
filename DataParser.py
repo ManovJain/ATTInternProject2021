@@ -49,21 +49,18 @@ class DataParser:
 
     def findShows(self):
         for ride in self.rides:
-            if ride.movie in self.showList:
-               # print("Already exists")
-                print()
-            else:
+            if ride.movie not in self.showList:
                 self.showList.append(ride.movie)
 
 
-    def findPotterRides(self):
-
-        for ride in self.rides:
-           if "Harry Potter" in ride.movie:
-            self.potterRides.append(ride)
-
-        for potterRide in self.potterRides:
-            print(potterRide.name)
+    # def findPotterRides(self):
+    #
+    #     for ride in self.rides:
+    #        if "Harry Potter" in ride.movie:
+    #         self.potterRides.append(ride)
+    #
+    #     for potterRide in self.potterRides:
+    #         print(potterRide.name)
 
 
 

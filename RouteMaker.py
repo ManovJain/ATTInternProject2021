@@ -1,6 +1,8 @@
 from DataParser import DataParser
 import Ride
 from User import User
+import random
+
 
 
 class Route:
@@ -9,18 +11,39 @@ class Route:
         self.rides = rides
         self.path = []
 
+    def displayRides(self):
+        for ride in self.rides:
+            ride.display()
+
     def generateRoute(self, showList):
         for ride in self.rides:
             for show in showList:
                 if ride.movie == show:
-                    self.path.append(ride.name)
+                    self.path.append(ride)
+
+    # def generateRoute(self, user):
+    #     showList = user.showHistory
+    #     for ride in self.rides:
+    #         for show in showList:
+    #             if ride.movie == show:
+    #                 self.path.append(ride)
 
     def generateRoute(self, user):
         showList = user.showHistory
+
         for ride in self.rides:
             for show in showList:
                 if ride.movie == show:
-                    self.path.append(ride.name)
+                    self.path.append(ride)
+
+
+    def displayRoute(self):
+        for ride in self.path:
+            ride.display()
+
+
+
+
 
 
 
