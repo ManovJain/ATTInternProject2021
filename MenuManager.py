@@ -10,7 +10,6 @@ fp.findShows()
 
 
 route = Route(fp.rides)
-print(fp.showList)
 
 
 
@@ -26,9 +25,18 @@ route.generateRoute(patientZero)
 
 print("Hello welcome to the AT&T Parks and Rec Route Maker")
 
-print("This is a User and his viewing history")
+print()
+print()
+
+print("This is a User and his viewing history:")
+print()
 print(patientZero.name)
 print(showsWatched)
 
+print()
+print()
+
 print("Based on their viewing history, this is the path we have generated for them")
+print()
+print()
 print(route.path)
