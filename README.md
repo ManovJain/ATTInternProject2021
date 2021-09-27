@@ -8,5 +8,13 @@ This Python script was created to show that I was able to create a autonomous ro
 
 ###Languages and Libraries used:
 1. Python
-2. numPy
-3. 
+2. random
+3. time
+
+
+###How to run:
+
+1. Clone this repo onto your local machine
+2. Make sure you have Python v3.8 or above
+3. Run using terminal or inside of an IDE. I used pycharm.
+4. The MenuManager script will showcase the interactive menu!
